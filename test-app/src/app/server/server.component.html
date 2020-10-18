@@ -1,0 +1,5 @@
+<p [ngStyle]="
+{
+    backgroundColor:getColorOnStatus(),
+    color: getServerStatus() === 'offline'? 'white': 'black'
+}">Server ID: {{serverName}} is {{getServerStatus()}}</p>

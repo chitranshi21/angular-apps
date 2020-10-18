@@ -1,0 +1,14 @@
+.heading {
+    font-size: 40px;
+    color: darkcyan;
+    text-align: center;
+}
+.left-control {
+    background-color: lightblue;
+    border: lightseagreen;
+}
+.right-control {
+    margin-left: 10px;
+    background-color: moccasin;
+    border: orangered;
+}
