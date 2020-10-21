@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-add-server',
@@ -6,8 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./add-server.component.css']
 })
 export class AddServerComponent implements OnInit {
-
-  serverName:String="";
+  @Output() serverCreated = new EventEmitter<{ name: string, status: string }>();
+  serverName: string
   isServerCreated:boolean=false;
 
   constructor() { }
@@ -21,6 +21,10 @@ export class AddServerComponent implements OnInit {
 
   createServer() {
     this.isServerCreated = true;
+    this.serverCreated.emit({
+      name: this.serverName,
+      status: Math.random() > 0.5 ? 'online' : 'offline'
+    });
   }
 
 

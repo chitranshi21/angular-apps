@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-servers',
@@ -6,7 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./servers.component.css']
 })
 export class ServersComponent implements OnInit {
-  servers = ['test', 'test1'];
+  servers = [{
+    name: "server 1",
+    status: "online"
+  },
+  {
+    name: "server 2",
+    status: "offline"
+  }];
 
   constructor() {
   }
