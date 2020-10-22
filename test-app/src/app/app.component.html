@@ -5,7 +5,11 @@
             <app-add-server (serverCreated)="onAddServer($event)"></app-add-server>
         </div>
         <div class='col-md-6 right-control col-offset-2'>
-            <app-server *ngFor="let server of servers" [server]="server"></app-server>
+            <app-server *ngFor="let server of servers" [server]="server">
+               <div class="row" style="padding-left: 20px;">
+                    {{server.status}}
+               </div>
+            </app-server>
         </div>
     </div>
 </div>

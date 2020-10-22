@@ -4,12 +4,13 @@
 <input
 type="text"
 class="form-control"
-[(ngModel)]="serverName"/>
+#inputServerName/>
 
 <button class="btn btn-primary"
-(click)="createServer()"
+(click)="createServer(inputServerName)"
 >Add server</button>
-<p *ngIf="isServerCreated;else noServer">Server was created with ServerName: {{serverName}}</p>
+<p *ngIf="isServerCreated;else noServer">Server was created 
+    with ServerName: {{inputServerName.value}}</p>
 <ng-template #noServer>
     <p>No Server created</p>
 </ng-template>

@@ -1,4 +1,4 @@
-import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output, ViewChild, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-add-server',
@@ -7,22 +7,19 @@ import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 })
 export class AddServerComponent implements OnInit {
   @Output() serverCreated = new EventEmitter<{ name: string, status: string }>();
-  serverName: string
-  isServerCreated:boolean=false;
+  isServerCreated: boolean = false;
+  @ViewChild('inputServerName', { static: true }) inputElement: ElementRef;
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  onUpdateServerName(event:Event) {
-    this.serverName = (<HTMLInputElement>event.target).value;
-  }
-
-  createServer() {
+  createServer(nameInput:HTMLInputElement) {
     this.isServerCreated = true;
+    console.log(this.inputElement.nativeElement.value);
     this.serverCreated.emit({
-      name: this.serverName,
+      name: nameInput.value,
       status: Math.random() > 0.5 ? 'online' : 'offline'
     });
   }
