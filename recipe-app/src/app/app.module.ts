@@ -11,6 +11,7 @@ import { RecipeItemComponent } from './recipes/recipe-list/recipe-item/recipe-it
 import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-edit.component';
 import { BasicHeighliterDirective } from './directives/basic-heighliter.directive';
+import { DropdownDirective } from './shared/dropdown.directive';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { BasicHeighliterDirective } from './directives/basic-heighliter.directiv
     RecipeItemComponent,
     ShoppingListComponent,
     ShoppingEditComponent,
-    BasicHeighliterDirective
+    BasicHeighliterDirective,
+    DropdownDirective
   ],
   imports: [
     BrowserModule,
