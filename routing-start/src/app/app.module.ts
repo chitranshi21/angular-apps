@@ -13,12 +13,17 @@ import { EditServerComponent } from './servers/edit-server/edit-server.component
 import { ServerComponent } from './servers/server/server.component';
 import { ServersService } from './servers/servers.service';
 import { Routes, RouterModule } from '@angular/router';
+import { CanDeactivateGuardService } from './servers/edit-server/can-deactivate-guard.service';
 
 const appRoutes: Routes = [
   { path: 'users', component: UsersComponent },
   { path: 'users/:id', component: UserComponent },
   { path: 'servers', component: ServersComponent },
-  {path: 'servers/:id/edit', component: EditServerComponent},
+  {
+    path: 'servers/:id/edit',
+    component: EditServerComponent,
+    canDeactivate: [CanDeactivateGuardService]
+  },
   {path: '', component: HomeComponent}
 ]
 
