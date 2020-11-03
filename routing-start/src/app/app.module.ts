@@ -22,7 +22,7 @@ const appRoutes: Routes = [
     { path: ':id', component: UserComponent }
   ] },
   { path: 'servers', canActivateChild:[AuthGuardService], component: ServersComponent ,children: [
-    {path: ':id', component: ServerComponent},
+    {path: ':id', component: ServerComponent, resolve:{server: ServerResolver}},
     {path: ':id/edit', component: EditServerComponent}
   ] },
   {path: '', component: HomeComponent},
