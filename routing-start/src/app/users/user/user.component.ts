@@ -16,9 +16,15 @@ export class UserComponent implements OnInit {
 
   ngOnInit() {
     this.user = {
-      id: this.route.snapshot.params['id'],
+      id: +this.route.snapshot.params['id'],
       name: "name"
     }
+    this.route.params.subscribe(param => {
+      this.user = {
+        id: +param['id'],
+        name: "name"
+      }
+    })
   }
   onClickCall() {
     const value = this.elementRef.nativeElement.value;
