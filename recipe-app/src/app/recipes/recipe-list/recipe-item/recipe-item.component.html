@@ -1,4 +1,7 @@
-<a href="#" class="list-group-item clearfix" (click)="onClickRecipe()" appBasicHeighliter
+<a class="list-group-item clearfix"
+[routerLink]="[index]" 
+routerLinkActive="active"
+appBasicHeighliter
             highlightColor="blue">
             <div class="pull-left">
                 <h4 class="list-group-item-heading">{{recipe.name}}</h4>
